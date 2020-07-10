@@ -20,4 +20,8 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.on('/').render('welcome')
+Route.get('/', async ({response})=> {
+  return response.send('Hello World')
+})
+
+Route.get('/home', 'PageController.home')
